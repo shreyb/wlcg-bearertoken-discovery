@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"testing"
 
-	disc "github.com/shreyb/wlcg-bearertoken-discovery"
+	disc "github.com/shreyb/wlcg-bearer-token-discovery-go"
 )
 
 func TestFindTokenAndFile(t *testing.T) {
