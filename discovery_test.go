@@ -191,9 +191,12 @@ func TestFindTokenAndFile(t *testing.T) {
 			tc.description,
 			func(t *testing.T) {
 				tc.setupFunc(t)
-				tok, err := disc.FindToken()
+				tok, path, err := disc.FindTokenAndFile()
 				if !reflect.DeepEqual(tok, tc.expectedTok) {
 					t.Errorf("Token strings do not match.  Expected %v, got %v", tc.expectedTok, tok)
+				}
+				if path != tc.expectedPath {
+					t.Errorf("Token paths do not match. Expected path %s, got %s", tc.expectedPath, path)
 				}
 				if tc.expectedErr != nil && err == nil {
 					t.Error("Expected non-nil error, but got nil")
